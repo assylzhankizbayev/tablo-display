@@ -1,1 +1,29 @@
-<h1>{{ user }}</h1>
+<!-- <h1>{{ user }}</h1> -->
+
+
+
+<div class="container">
+  <div class="header">
+    <div class="header__item">
+      <span>Клиент</span>
+      <span>Окно</span>
+    </div>
+
+    <div class="header__item">
+      <span>Клиент</span>
+      <span>Окно</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="tablo" *ngFor="let item of data">
+      <span class="tablo__id">{{ item }}</span>
+
+      <div class="tablo__icon">
+        <img class="img-arrow" src="./assets/icons/arrow.svg" alt="arrow" />
+      </div>
+
+      <span class="tablo__room">101</span>
+    </div>
+  </div>
+</div>
