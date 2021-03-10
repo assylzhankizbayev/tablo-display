@@ -1,29 +1,35 @@
-<!-- <h1>{{ user }}</h1> -->
-
-
-
 <div class="container">
   <div class="header">
     <div class="header__item">
-      <span>Клиент</span>
-      <span>Окно</span>
+      <div class="header__number">
+        <span>Нөмір</span>
+        <span>Номер</span>
+      </div>
+      <div class="header__room">
+        <span>Терезе</span>
+        <span>Окно</span>
+      </div>
     </div>
 
     <div class="header__item">
-      <span>Клиент</span>
-      <span>Окно</span>
+      <div class="header__time">
+        <span class="time">{{ today | date: 'HH:mm:ss' }}</span>
+        <span class="date">{{ today | customDate }}</span>
+      </div>
     </div>
   </div>
 
   <div class="body">
     <div class="tablo" *ngFor="let item of data">
-      <span class="tablo__id">{{ item }}</span>
+      <span class="tablo__id">{{ item | customNumber }}</span>
 
       <div class="tablo__icon">
         <img class="img-arrow" src="./assets/icons/arrow.svg" alt="arrow" />
       </div>
 
-      <span class="tablo__room">101</span>
+      <div class="tablo__right">
+        <span class="tablo__room">101</span>
+      </div>
     </div>
   </div>
 </div>

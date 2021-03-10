@@ -1,7 +1,12 @@
+@font-face {
+  font-family: bebas;
+  src: url(assets/fonts/BebasNeue-Regular.ttf) format("opentype");
+}
 body, html {
   height: 100%;
   width: 100%;
   font-size: 100%;
+  font-family: 'bebas', 'arial', sans-serif;
 }
 
 * {
@@ -9,3 +14,4 @@ body, html {
   padding: 0;
   box-sizing: border-box;
 }
+
