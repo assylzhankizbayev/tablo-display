@@ -7,7 +7,8 @@ import { io } from 'socket.io-client';
 })
 export class WebSocketService {
   socket: any;
-  readonly uri = 'ws://localhost:8080';
+  // readonly uri = 'ws://localhost:8080';
+  readonly uri = 'ws://tablo-server.gp3.kz';
 
   constructor() {
     this.socket = io(this.uri);
