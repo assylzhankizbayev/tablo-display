@@ -25,6 +25,20 @@ export class MainComponent implements OnInit, OnDestroy {
       .subscribe(() => console.log('Connection succeeded'));
 
     this.webSocket
+      .listen('init')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(({ displayUsersListLength, displayUsersList, calIdx }) => {
+        console.log('init', displayUsersListLength, displayUsersList);
+
+        this.users = displayUsersList?.length ? displayUsersList.slice() : [];
+        this.currentUserId = calIdx;
+
+        if (displayUsersListLength) {
+          this.usersListCount = displayUsersListLength;
+        }
+      });
+
+    this.webSocket
       .listen('user-info')
       .pipe(takeUntil(this.destroy$))
       .subscribe((data) => {
